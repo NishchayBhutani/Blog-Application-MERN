@@ -14,6 +14,9 @@ export const Navbar = () => {
       <NavLink to='/' onClick={logoutHandler} className='navbar-navlink'>
         Logout
       </NavLink>
+      <NavLink to='/dashboard/myprojects' className='navbar-navlink'>
+        My Projects
+      </NavLink>
     </div>
   );
 };

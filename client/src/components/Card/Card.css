@@ -1,0 +1,29 @@
+.post-card-container {
+    background-color: rgb(227, 223, 223);
+    width: 20vw;
+    height: 40vh;
+    /* border: 2px solid black; */
+}
+
+.post-card-container:hover {
+    cursor: pointer;
+    background-color: rgb(158, 158, 158);
+}
+
+.post-card-title {
+    display: flex;
+    /* background-color: brown; */
+    width: 20vw;
+    height: 10vh;
+    justify-content: center;
+}
+
+.post-card-body {
+    display: flex;
+    justify-content: left;
+    /* background-color: pink; */
+    width: 20vw;
+    max-width: 20vw;
+    height: 20vh; 
+    max-height: 20vh;
+}

@@ -1,8 +1,10 @@
 /** @format */
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./Register.css";
 export const Register = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,8 +20,17 @@ export const Register = () => {
   const buttonClickHandler = (e) => {
     axios
       .post("http://localhost:5000/user/register", { name, email, password })
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+      .then((res) => {
+        console.log(res);
+      })
+      .then(() => navigate("/dashboard"))
+      .catch((err) => {
+        console.log(err);
+        alert("email already in use");
+      });
+    setName("");
+    setEmail("");
+    setPassword("");
   };
   return (
     <>

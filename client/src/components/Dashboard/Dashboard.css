@@ -1,0 +1,6 @@
+.cards-container {
+    margin: 5vh 0 0 5vw;
+    display: grid;
+    grid-template-columns: 30vw 50vw;
+    grid-gap: 10px;
+}

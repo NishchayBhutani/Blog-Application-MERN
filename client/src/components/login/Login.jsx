@@ -23,7 +23,10 @@ export const Login = () => {
       .then(() => {
         navigate("/dashboard");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        alert("incorrect credentials");
+      });
     setEmail("");
     setPassword("");
   };

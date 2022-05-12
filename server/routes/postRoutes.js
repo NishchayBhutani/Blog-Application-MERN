@@ -32,4 +32,16 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/:userId", async (req, res) => {
+  const uId = req.params.userId;
+  try {
+    const posts = await Post.find({
+      user: mongoose.Types.ObjectId(uId),
+    }).populate("user");
+    res.json(posts);
+  } catch (err) {
+    res.status(500).json({ msg: err });
+  }
+});
+
 module.exports = router;

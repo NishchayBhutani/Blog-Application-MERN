@@ -18,7 +18,7 @@ router.post("/register", async (req, res) => {
     await newUser.save();
     res.send("successful");
   } catch (err) {
-    res.json({ msg: err });
+    res.status(500).json({ msg: err });
   }
 });
 
@@ -29,7 +29,7 @@ router.post("/login", async (req, res) => {
   try {
     user = await User.find({ email, password });
   } catch (err) {
-    res.json({ msg: err });
+    res.status(500).json({ msg: err });
   }
   if (!user) {
     return res.status(404).json({ msg: "authentication error" });
@@ -42,7 +42,7 @@ router.get("/", async (req, res) => {
     const users = await User.find().populate("posts");
     res.json(users);
   } catch (err) {
-    res.json({ msg: err });
+    res.status(500).json({ msg: err });
   }
 });
 
@@ -57,7 +57,7 @@ router.patch("/update:userId", async (req, res) => {
     await User.findOneAndUpdate({ _id: mongoose.Types.ObjectId(uId) }, user);
     res.json(user);
   } catch (err) {
-    res.json({ msg: err });
+    res.status(500).json({ msg: err });
   }
 });
 
@@ -69,7 +69,7 @@ router.delete("/delete:userId", async (req, res) => {
     await User.deleteOne({ user });
     res.send("successful");
   } catch (err) {
-    res.json({ msg: err });
+    res.status(500).json({ msg: err });
   }
 });
 
