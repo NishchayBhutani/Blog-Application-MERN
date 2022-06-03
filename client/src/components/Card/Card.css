@@ -1,0 +1,6 @@
+/** @format */
+
+.post-card-container:hover {
+  background-color: rgb(220, 220, 220);
+  cursor: pointer;
+}

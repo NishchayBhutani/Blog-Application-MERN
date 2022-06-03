@@ -1,0 +1,23 @@
+/** @format */
+
+.navbar-container {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.navbar-navlink {
+  margin-right: 2vw;
+}
+
+.space {
+  padding-left: 10%;
+}
+
+.text {
+  font-size: 33px;
+}
+
+.space1 {
+  margin-left: 55%;
+}
