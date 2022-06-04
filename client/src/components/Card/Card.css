@@ -1,5 +1,9 @@
 /** @format */
 
+.post-card-container {
+  font-family: 'Archivo', sans-serif;
+}
+
 .post-card-container:hover {
   background-color: rgb(220, 220, 220);
   cursor: pointer;

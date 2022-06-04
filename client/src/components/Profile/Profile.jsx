@@ -4,6 +4,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Navbar } from "../Navbar/Navbar";
 import { NavLink } from "react-router-dom";
+import Button from 'react-bootstrap/Button'
 import "./Profile.css";
 export const Profile = () => {
   const [name, setName] = useState("");
@@ -50,11 +51,34 @@ export const Profile = () => {
             />
           </td>
         </tr>
+      </table>
+      <br/>
+      <hr />
+      <h3 className="password-update-heading">Update Password:</h3>
+      <table className='password-update-table'>
         <tr>
-          <td className='table-navlink-container'>
-            <NavLink to='/' onClick={logoutHandler}>
-              Logout
-            </NavLink>
+          <td className='table-row-left'>
+            Current password: 
+          </td>
+          <td className='table-row-right'>
+            <input type="password"/>
+          </td>
+        </tr>
+        <tr>
+          <td className='table-row-left'>
+            New password: 
+          </td>
+          <td className='table-row-right'>
+            <input type="password" />
+          </td>
+        </tr>
+        <tr>
+          <td className='table-row-left'>Retype new password: </td>
+          <td className='table-row-right'><input type="password" /></td>
+        </tr>
+        <tr>
+          <td className="table-row-btn">
+          <Button className="btn-primary">Update</Button>
           </td>
         </tr>
       </table>
