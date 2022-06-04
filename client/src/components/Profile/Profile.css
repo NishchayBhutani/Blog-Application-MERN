@@ -1,0 +1,32 @@
+/** @format */
+
+.profile-table {
+  margin-left: 5vw;
+  margin-top: 7vh;
+}
+
+.profile-table tr {
+  /* border: 2px solid red; */
+  padding: 10px;
+  /* display: flex; */
+}
+
+.table-row-left {
+  height: 100px;
+  /* border: 2px solid green; */
+  padding: 30px;
+  vertical-align: auto;
+}
+
+.table-row-right {
+  height: 100px;
+  /* border: 2px solid green; */
+  padding: 30px;
+  vertical-align: auto;
+  text-align: left;
+}
+
+.table-navlink-container {
+  /* border: 2px solid green; */
+  padding-left: 30px;
+}
