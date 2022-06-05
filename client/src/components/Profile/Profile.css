@@ -1,7 +1,7 @@
 /** @format */
 
 .profile-table {
-  font-family: 'Archivo', sans-serif;
+  font-family: "Archivo", sans-serif;
   font-weight: bold;
   font-size: large;
   margin-left: 5rem;
@@ -10,7 +10,7 @@
 }
 
 .password-update-table {
-  font-family: 'Archivo', sans-serif;
+  font-family: "Archivo", sans-serif;
   font-weight: bold;
   font-size: large;
   margin-left: 5rem;
@@ -45,9 +45,36 @@
 }
 
 .password-update-heading {
+  /* font-family: "Archivo", sans-serif; */
+  margin-left: 6rem;
+}
+
+.socials-heading {
   margin-left: 6rem;
 }
 
 .table-row-btn {
   padding-left: 30px;
+}
+
+/* .bio-update-btn {
+  margin-left: 6rem;
+} */
+
+.table-row-btn {
+  padding: 20px;
+  height: 4rem;
+}
+
+.logout-nav {
+  margin-left: 6rem;
+}
+
+.socials-table {
+  font-family: "Archivo", sans-serif;
+  font-weight: bold;
+  font-size: large;
+  margin-left: 5rem;
+  margin-top: 3rem;
+  opacity: 0.8;
 }

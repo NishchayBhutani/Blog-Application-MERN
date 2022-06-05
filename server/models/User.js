@@ -20,6 +20,15 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    instagram: {
+      type: String
+    },
+    facebook: {
+      type: String
+    },
+    twitter: {
+      type: String
+    },
     posts: [
       {
         type: mongoose.Types.ObjectId,

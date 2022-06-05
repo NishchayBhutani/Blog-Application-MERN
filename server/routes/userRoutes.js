@@ -11,6 +11,9 @@ router.post("/register", async (req, res) => {
   const newUser = new User({
     name: name,
     bio: "",
+    instagram: "",
+    facebook: "",
+    twitter: "",
     email: email,
     password: password,
     projects: [],
@@ -78,6 +81,38 @@ router.patch("/update:userId", async (req, res) => {
   } catch (err) {
     res.status(500).json({ msg: err });
   }
+});
+
+router.patch("/profile/bio/update/:userId", async (req, res) => {
+  const uId = req.params.userId;
+  let user = "";
+  try {
+    user = await User.findById(mongoose.Types.ObjectId(uId));
+  } catch (err) {
+    res.status(404).json({ msg: err });
+  }
+  const bio = req.body.bio;
+  user = await User.findOneAndUpdate(
+    { _id: mongoose.Types.ObjectId(uId) },
+    { bio },
+  );
+  return res.json(await User.findById(mongoose.Types.ObjectId(uId)));
+});
+
+router.patch("/profile/password/:userId", async (req, res) => {
+  const uId = req.params.userId;
+  let user = "";
+  try {
+    user = await User.findById(mongoose.Types.ObjectId(uId));
+  } catch (err) {
+    res.status(404).json({ msg: err });
+  }
+  const password = req.body.password;
+  user = await User.findOneAndUpdate(
+    { _id: mongoose.Types.ObjectId(uId) },
+    { password },
+  );
+  return res.json(user);
 });
 
 router.delete("/delete:userId", async (req, res) => {
