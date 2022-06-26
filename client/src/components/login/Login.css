@@ -1,55 +1,61 @@
-.split1 {
-    height: 100%;
-    width: 60%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    padding-top: 0%;
-    left: 0;
-    background-color: #ffffff;
-   }
-   .split2 {
-    height: 100%;
-    width: 40%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    overflow-x: hidden;
-    padding-top: 0%;
-    right: 0;
-    background-color: #ffffff;
-   }
-   .split2_login {
-    height: 62%;
-    width: 30%;
-    position: fixed;
-    z-index: 1;
-    top:21% ;
-    overflow-x: hidden;
-    padding-top:5%;
-    right:5%;
-    background-color:#ffffff;
-    border: 0px solid black;
-    
-   }
-   .img1{
-    width:100%;
-    position:relative;
-    margin-top:0%;
-   }
-   .li{
-       color:rgb(0, 0, 0);
-       margin-left:25%;
-       font-size:15pt;
-       }
-   
-    .button1{
-        text-align: center; 
-   }
+/** @format */
 
-   .button2{
-    text-align: center;
-    color: orange;
+.split1 {
+  height: 100%;
+  width: 60%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding-top: 0%;
+  left: 0;
+  background-color: #ffffff;
+}
+.split2 {
+  height: 100%;
+  width: 40%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 0%;
+  right: 0;
+  background-color: #ffffff;
+}
+.split2_login {
+  height: 62%;
+  width: 30%;
+  position: fixed;
+  z-index: 1;
+  top: 21%;
+  overflow-x: hidden;
+  padding-top: 5%;
+  right: 5%;
+  background-color: #ffffff;
+  border: 0px solid black;
+}
+.img1 {
+  width: 100%;
+  position: relative;
+  margin-top: 0%;
+}
+.li {
+  color: rgb(0, 0, 0);
+  margin-left: 25%;
+  font-size: 15pt;
+}
+
+.button1 {
+  text-align: center;
+}
+
+.button2 {
+  text-align: center;
+  color: orange;
+}
+
+.login-links {
+  display: flex;
+  justify-content: space-between;
 }

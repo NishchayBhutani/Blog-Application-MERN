@@ -8,6 +8,7 @@ router.post("/register", async (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
   const password = req.body.password;
+  const security = req.body.security;
   const newUser = new User({
     name: name,
     bio: "",
@@ -16,6 +17,7 @@ router.post("/register", async (req, res) => {
     twitter: "",
     email: email,
     password: password,
+    security: security,
     projects: [],
   });
   try {
@@ -99,7 +101,27 @@ router.patch("/profile/bio/update/:userId", async (req, res) => {
   return res.json(await User.findById(mongoose.Types.ObjectId(uId)));
 });
 
-router.patch("/profile/password/:userId", async (req, res) => {
+router.patch("/profile/password/update/:userId", async (req, res) => {
+  const uId = req.params.userId;
+  const currentPassword = req.body.currentPassword;
+  let user = "";
+  try {
+    user = await User.findById(mongoose.Types.ObjectId(uId));
+  } catch (err) {
+    res.status(404).json({ msg: err });
+  }
+  if (user.password !== currentPassword) {
+    return res.send("current password does not match");
+  }
+  const password = req.body.newPassword;
+  user = await User.findOneAndUpdate(
+    { _id: mongoose.Types.ObjectId(uId) },
+    { password },
+  );
+  return res.json(user);
+});
+
+router.patch("/profile/socials/update/:userId", async (req, res) => {
   const uId = req.params.userId;
   let user = "";
   try {
@@ -107,10 +129,16 @@ router.patch("/profile/password/:userId", async (req, res) => {
   } catch (err) {
     res.status(404).json({ msg: err });
   }
-  const password = req.body.password;
+  const instagram = req.body.instagram;
+  const facebook = req.body.facebook;
+  const twitter = req.body.twitter;
   user = await User.findOneAndUpdate(
     { _id: mongoose.Types.ObjectId(uId) },
-    { password },
+    {
+      instagram: instagram === null ? "" : instagram,
+      facebook: facebook === null ? "" : facebook,
+      twitter: twitter === null ? "" : twitter,
+    },
   );
   return res.json(user);
 });
@@ -125,6 +153,20 @@ router.delete("/delete:userId", async (req, res) => {
   } catch (err) {
     res.status(500).json({ msg: err });
   }
+});
+
+router.get("/confirmemail", async (req, res) => {
+  // const email = req.body.email;
+  // let user = "";
+  // try {
+  //   console.log(email);
+  //   user = await User.find({ email: email });
+  //   if (!user) return res.send("email not registered");
+  //   res.send("confirmation success");
+  // } catch (err) {
+  //   res.json({ msg: err });
+  // }
+  res.send("hello");
 });
 
 module.exports = router;

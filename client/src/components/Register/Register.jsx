@@ -8,6 +8,7 @@ export const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [security, setSecurity] = useState("");
   const nameChangeHandler = (e) => {
     setName(e.target.value);
   };
@@ -16,6 +17,9 @@ export const Register = () => {
   };
   const passwordChangeHandler = (e) => {
     setPassword(e.target.value);
+  };
+  const securityChangeHandler = (e) => {
+    setSecurity(e.target.value);
   };
   const buttonClickHandler = (e) => {
     if (emailValidation()) {
@@ -56,7 +60,7 @@ export const Register = () => {
       </div>
       <div class='split2'>
         <div class='split2_login'>
-          <h3 className='button1'>Sign Up to BlogPost !</h3>
+          <h3 className='button1'>Sign Up to BlogSpot !</h3>
           <br />
           <label>Name:</label>
           <input
@@ -81,12 +85,23 @@ export const Register = () => {
             value={password}
           />
           <br />
+          <label>Security Pin:</label>
+          <input
+            className='form-control input-sm input-security'
+            onChange={securityChangeHandler}
+            type='password'
+            value={security}
+            maxlength='4'
+            placeholder='should be numeric'
+          />
+          <br />
           <button
             onClick={buttonClickHandler}
             className='btn btn-block btn-success'>
             Create Account
           </button>
           <br />
+
           <a className='button1' href='http://localhost:3000/'>
             <p>Already have an account ? Login</p>
           </a>

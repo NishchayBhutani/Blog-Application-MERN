@@ -7,6 +7,7 @@ import { Create } from "./components/Create/Create";
 import { Blog } from "./components/Blog/Blog";
 import { Myprojects } from "./components/MyProjects/Myprojects";
 import { Profile } from "./components/Profile/Profile";
+import { ForgotPassword } from "./components/ForgotPassword/ForgotPassword";
 function App() {
   return (
     <div>
@@ -19,6 +20,7 @@ function App() {
           <Route path='/blog' exact element={<Blog />} />
           <Route path='/dashboard/myprojects' exact element={<Myprojects />} />
           <Route path='/profile' exact element={<Profile />} />
+          <Route path='/forgotpass' exact element={<ForgotPassword />} />
         </Routes>
       </Router>
     </div>

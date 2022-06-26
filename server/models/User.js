@@ -21,13 +21,16 @@ const userSchema = new mongoose.Schema(
       required: true,
     },
     instagram: {
-      type: String
+      type: String,
     },
     facebook: {
-      type: String
+      type: String,
     },
     twitter: {
-      type: String
+      type: String,
+    },
+    security: {
+      type: String,
     },
     posts: [
       {
